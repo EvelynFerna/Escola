@@ -5,6 +5,7 @@ const Aluno = require('./controllers/aluno');
 const Professor = require('./controllers/professor');
 const Turma = require('./controllers/turma');
 const Disciplina = require('./controllers/disciplina');
+const Matricula = require('./controllers/matriculas');
 
 
 routes.get('/', (req, res) => {
@@ -34,5 +35,11 @@ routes.get('/disciplinas', Disciplina.read);
 routes.get('/disciplinas/:id', Disciplina.readOne);
 routes.put('/disciplinas/:id', Disciplina.update);
 routes.delete('/disciplinas/:id', Disciplina.remove);
+
+routes.post('/matriculas', Matricula.create);
+routes.get('/matriculas', Matricula.read);
+routes.get('/matriculas/:id', Matricula.readOne);
+routes.put('/matriculas/:id', Matricula.update);
+routes.delete('/matriculas/:id', Matricula.remove);
 
 module.exports = routes;
